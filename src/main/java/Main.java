@@ -1,5 +1,7 @@
 
 
+import Books.Book;
+import Books.Books;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -12,40 +14,20 @@ import java.util.List;
 public class Main{
     public static void main(String[] args) {
 
-        Author edgarAlanPoe =  new Author("Edgar Allan Poe");
-        Author arthurConanDoyle = new Author("Atrhur Conan Doyle");
-        Author robertEHoward = new Author("Robert E. Howard");
+        Books books = new Books();
+        ObjectMapper mapper =  new ObjectMapper();
 
 
-        Categories fantasyNovel = new Categories("fantasy novel");
-        Categories poetry = new Categories("poetry");
-        Categories detectiveNovel = new Categories("detective novel");
-
-    Book tamerlaneAndOtherPoems = new Book("Tamerlane and Other Poems", edgarAlanPoe, poetry);
-    Book alAaraafTamerlaneAndMinorPoems = new Book("Al Aaraaf, Tamerlane and Minor Poems (1829)", edgarAlanPoe, poetry);
-    Book poems = new Book("poetry",  edgarAlanPoe, poetry);
-
-    Book conanTheInvincible = new Book("Conan the Invincible", robertEHoward, fantasyNovel);
-    Book conanTheDefender = new Book("Conan the Defender", robertEHoward, fantasyNovel);
-    Book conanTheDestroyer = new Book("Conan the Destroyer", robertEHoward, fantasyNovel);
-
-    Book theValleyOfFear = new Book("The Valley of Fear", arthurConanDoyle, detectiveNovel);
-    Book theHoundOfTheBaskervilles = new Book("The Hound of the Baskervilles", arthurConanDoyle, detectiveNovel);
-    Book theSignOfFour = new Book("The Sign of Four", arthurConanDoyle, detectiveNovel);
-
-    ObjectMapper mapper =  new ObjectMapper();
-
-    List<Book> bookList = new ArrayList<>();
-    bookList.add(conanTheDestroyer);
-    bookList.add(theHoundOfTheBaskervilles);
-    bookList.add(tamerlaneAndOtherPoems);
-    bookList.add(theSignOfFour);
-    bookList.add(conanTheInvincible);
-    bookList.add(theValleyOfFear);bookList.add(conanTheDefender);
-    bookList.add(alAaraafTamerlaneAndMinorPoems);
-    bookList.add(poems);
-
-
+        List<Book> bookList = new ArrayList<>();
+        bookList.add(books.getTheSignOfFour());
+        bookList.add(books.getTheValleyOfFear());
+        bookList.add(books.getTheHoundOfTheBaskervilles());
+        bookList.add(books.getConanTheInvincible());
+        bookList.add(books.getConanTheDestroyer());
+        bookList.add(books.getConanTheDefender());
+        bookList.add(books.getTamerlaneAndOtherPoems());
+        bookList.add(books.getPoems());
+        bookList.add(books.getAlAaraafTamerlaneAndMinorPoems());
 
 
         try {

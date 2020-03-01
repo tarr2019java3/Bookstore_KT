@@ -1,9 +1,11 @@
-public class Categories {
+package Categories;
+
+public class Category {
     private String category;
 
-public Categories(){}
+public Category(){}
 
-    public Categories(String category){
+    public Category(String category){
         this.category = category;
     }
 

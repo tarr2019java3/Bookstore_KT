@@ -1,15 +1,24 @@
+package Books;
+
+import Authors.Author;
+import Categories.Category;
+
 public class Book {
     private String name;
     private Author author;
-    private Categories category;
+    private Category category;
 
-    public Book(String name, Author author, Categories category){
+    public Book(){}
+
+
+    public Book(String name, Author author, Category category){
         this.name = name;
         this.author = author;
         this.category = category;
     }
 
-    public Book(){}
+
+
 
     public String getName() {
         return name;
@@ -27,11 +36,11 @@ public class Book {
         this.author = author;
     }
 
-    public Categories getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(Categories category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 }
